@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spot</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .content {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        .event {
+            color: #ccc;
+        }
+        .card {
+            background-color: #E6F3FF;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .gift-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .card-text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .calm-card {
+            background: linear-gradient(to right, #FFA500, #FF6347);
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .calm-content {
+            margin-bottom: 10px;
+        }
+        .image-slider {
+            width: 100%;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            display: flex;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .slider-image {
+            flex: 0 0 100%;
+            width: 100%;
+            object-fit: cover;
+            scroll-snap-align: start;
+        }
+        .image-slider::-webkit-scrollbar {
+            display: none;
+        }
+        .image-slider {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .info-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .coming-soon {
+            text-align: center;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #FFD700;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .nav-item {
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <div class="logo">Spot</div>
+                <div class="event">공부유형 해설</div>
+            </div>
+            <div class="card">
+                <div class="gift-icon">⚡</div>
+                <div class="card-text">당신의 공부유형은..<br>벼락치기 형!</div>
+            </div>
+            <div class="info-card">
+                <p>아래의 가이드를 따라보세요.</p>
+                <pre>
+                    1. Pomodoro 기법 활용
+                    짧고 집중적인 공부 세션: 25분 동안 집중하여 공부하고, 5분 휴식을 취합니다. 이를 4회 반복한 후 15-30분의 긴 휴식을 취합니다.
+                    장점: 시간 관리에 도움이 되고, 짧은 시간 동안 집중력을 최대화할 수 있습니다.
+
+                    2. 시각화 도구 사용
+                    마인드맵: 주요 개념과 키워드를 시각적으로 정리하여 기억에 도움을 줍니다.
+                    플래시 카드: 중요한 내용을 플래시 카드로 만들어 반복 학습을 통해 암기합니다.
+                    장점: 복잡한 정보를 간단하게 정리하고, 시각적 기억을 촉진합니다.
+
+                    3. 액티브 리콜 (Active Recall)
+                    자기 테스트: 학습한 내용을 스스로 테스트해보며 기억을 강화합니다.
+                    퀴즈 만들기: 중요한 내용을 퀴즈 형식으로 만들어 반복 학습합니다.
+                    장점: 단순한 반복 읽기보다 더 효과적으로 정보를 기억할 수 있습니다.
+
+                    4. 인터리빙 (Interleaving)
+                    교차 학습: 여러 과목이나 주제를 교차하며 학습하여 다양한 내용을 학습합니다.
+                    장점: 단일 주제에 집중하는 것보다 더 나은 학습 효과를 얻을 수 있습니다.
+                    
+                    5. Feynman 기법
+                    간단하게 설명하기: 학습한 내용을 다른 사람에게 쉽게 설명할 수 있도록 연습합니다.
+                    모르는 부분 확인: 설명하는 과정에서 이해하지 못한 부분을 확인하고 보완합니다.
+                    장점: 학습 내용을 깊이 이해하고, 설명 능력을 키울 수 있습니다.
+
+                    6. 시간 제한 문제 풀기
+                    모의고사: 실제 시험과 유사한 환경에서 시간 제한 문제를 풉니다.
+                    타이머 설정: 각 문제를 푸는 시간을 제한하여 실전 감각을 키웁니다.
+                    장점: 시험 시간 관리 능력을 향상시키고, 실전 감각을 키울 수 있습니다.
+
+                    7. 하이라이트와 노트 정리
+                    핵심 내용 하이라이트: 중요한 내용을 하이라이트하여 빠르게 복습할 수 있도록 합니다.
+                    간단한 노트 작성: 중요한 내용을 간단히 정리하여 빠르게 훑어볼 수 있는 노트를 작성합니다.
+                    장점: 중요한 내용을 빠르게 찾아 복습할 수 있습니다.</pre>
+                    <br><br>
+                    <a href="공부유형 해설/벼락치기 형.docx" style="font-weight: bold; color: black;">▶결과 다운로드하기</a>
+            </div>
+        </div>
+        <div class="bottom-nav">
+            <div class="nav-item">🏠</div>
+            <div class="nav-item">🔍</div>
+            <div class="nav-item">⚡</div>
+            <div class="nav-item">👤</div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.image-slider');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+            slider.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('touchend', () => {
+                isDown = false;
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
+</body>
+</html>

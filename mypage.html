@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            background-color: rgb(233, 232, 232);
+            min-height: 100vh;
+            padding-bottom: 70px; /* bottom-nav의 높이만큼 여백 추가 */
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            color: #FFA500;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .my-page {
+            color: #999;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 15px;
+            padding: 15px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .settings {
+            float: right;
+            margin-left: auto;
+        }
+        h2 {
+            margin: 20px 15px 10px;
+            font-size: 16px;
+        }
+        .calendar {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        .calendar-icon {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        .file-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .file-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .file-list li:last-child {
+            border-bottom: none;
+        }
+        .spot-plus {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #f8f8f8;
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #FFD700;
+            padding: 10px;
+            border-radius: 20px 20px 0 0;
+        }
+        .bottom-nav-item {
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Spot</div>
+            <div class="my-page">My page</div>
+        </header>
+        
+        <div class="card profile">
+            <img src="profile.jpg" alt="Profile">
+            <div>
+                <strong>Spot(@spot_)</strong>
+                <div>09 | Lv1</div>
+            </div>
+            <div class="settings">⚙️</div>
+        </div>
+        
+        <h2>나의 공부유형 💡</h2>
+        <div class="card calendar">
+            <div class="calendar-icon">📅</div>
+            <div>계획형</div>
+            <div style="margin-left: auto;">자세히 알아보기 ></div>
+        </div>
+        
+        <h2>최근 내가 푼 문제 👀</h2>
+        <div class="card">
+            <ul class="file-list">
+                <li>[과학] 역학적 에너지의 보존 PDF</li>
+                <li>[물리학_과학] 스칼라량과 벡터량 PDF</li>
+                <li>[사회] 헌법 알아보기 PDF</li>
+                <li>[사회통합] 2024 중간고사 모음 PDF</li>
+            </ul>
+        </div>
+        
+        <h2>내 멤버십 🔥</h2>
+        <div class="spot-plus">
+            <div>Spot+</div>
+            <div>시즌별 700W</div>
+        </div>
+        
+        <nav class="bottom-nav">
+            <div class="bottom-nav-item">🏠</div>
+            <div class="bottom-nav-item">🔍</div>
+            <div class="bottom-nav-item">⚡</div>
+            <div class="bottom-nav-item">👤</div>
+        </nav>
+    </div>
+</body>
+</html>

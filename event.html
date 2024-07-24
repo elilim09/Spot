@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spot</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .content {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        .event {
+            color: #ccc;
+        }
+        .card {
+            background-color: #E6F3FF;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .gift-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .card-text {
+            font-size: 14px;
+        }
+        .calm-card {
+            background: linear-gradient(to right, #FFA500, #FF6347);
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .calm-content {
+            margin-bottom: 10px;
+        }
+        .image-slider {
+            width: 100%;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            display: flex;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .slider-image {
+            flex: 0 0 100%;
+            width: 100%;
+            object-fit: cover;
+            scroll-snap-align: start;
+        }
+        .image-slider::-webkit-scrollbar {
+            display: none;
+        }
+        .image-slider {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .info-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .coming-soon {
+            text-align: center;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #FFD700;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .nav-item {
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <div class="logo">Spot</div>
+                <div class="event">Event</div>
+            </div>
+            <div class="card">
+                <div class="gift-icon">🎁</div>
+                <div class="card-text">진행 중인 이벤트<br>보러가기</div>
+            </div>
+            <div class="calm-card">
+                <div class="calm-content">
+                    <h2>The way to Rest</h2>
+                    <p>가장 기분좋게 쉬는 방법</p>
+                </div>
+                <div class="image-slider">
+                    <img src="images/스트레치.png" alt="Stretcd" class="slider-image">
+                    <img src="images/음악듣기.png" alt="Music" class="slider-image">
+                    <img src="images/춤추기.png" alt="" class="slider-image">
+                    <img src="image4.jpg" alt="Calm 4" class="slider-image">
+                </div>
+            </div>
+            <div class="info-card">
+                <p>오늘의 급식</p>
+                <p>서태웅(5) / 오백원 단식(5.6) / 수식1품목식 / 계획완성 (5.6.10.13) / 족식 (9.17.18)</p>
+            </div>
+            <div class="coming-soon">Coming Soon</div>
+        </div>
+        <div class="bottom-nav">
+            <div class="nav-item">🏠</div>
+            <div class="nav-item">🔍</div>
+            <div class="nav-item">⚡</div>
+            <div class="nav-item">👤</div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.image-slider');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+            slider.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('touchend', () => {
+                isDown = false;
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
+</body>
+</html>

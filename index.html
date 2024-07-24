@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Jua&display=swap" rel="stylesheet">
+    <title>Spot</title>
+    <style>
+        @font-face {
+            font-family: 'SamsungSharpSans';
+            src: url('fonts/samsungsharpsans.otf') format('opentype');
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: 'SamsungSharpSans';
+            src: url('fonts/samsungsharpsans-medium.otf') format('opentype');
+            font-weight: medium;
+        }
+        @font-face {
+            font-family: 'SamsungSharpSans';
+            src: url('fonts/samsungsharpsans-bold.otf') format('opentype');
+            font-weight: bold;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            box-sizing: border-box;
+        }
+        
+        #intro {
+            font-size: 48px;
+            color: #f6cc7a;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+        #spot-text {
+            overflow: hidden;
+            border-right: .15em solid #f6cc7a;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 0.5s steps(4, end),
+                blink-caret .75s step-end infinite;
+        }
+        #main-content {
+            text-align: center;
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 5ch }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #f6cc7a; }
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .content {
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-family: 'Comfortaa', cursive;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        .login, .reigster {
+            color: #ccc;
+        }
+        .card {
+            background-color: #E6F3FF;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .gift-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .card-text {
+            font-size: 14px;
+        }
+        .calm-card {
+            background: linear-gradient(to right, #FFA500, #FF6347);
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-family: SamsungSharpSans;
+        }
+        .info-cards {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        }
+        .info-cards::-webkit-scrollbar { /* WebKit */
+            width: 0;
+            height: 0;
+        }
+        .info-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-right: 10px;
+            font-size: 14px;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            
+        }
+        .coming-soon {
+            text-align: center;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #FFD700;
+            padding: 10px;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+        .nav-item {
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <div id="spot-text">Spot</div>
+    </div>
+    <div id="main-content">
+        <div class="container">            <div class="content">
+                <div class="header">
+                    <div class="logo">Spot</div>
+                    <div class="login">Login / Register</div>
+                </div>
+                <div class="calm-card">
+                    <h2>Welcome</h2>
+                    <p style="font-weight: normal;">to the New way to study</p>
+                </div>
+                <br>
+
+                <p style="text-align: left; font-weight: bold;">나에게 맞는 공부방법</p>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <a style="font-size:xxx-large;">💡</a><a style="font-weight: bold;"><br>공부유형<br>검사하기</a>
+                    </div>
+                    <div class="info-card" onclick="window.location.href='벼락치기형 해설.html'">
+                        <a style="font-size:xxx-large;">⚡</a><a style="font-weight: bold; line-height: 2.3;" ><br>벼락치기형</a>
+                    </div>
+                    <div class="info-card">
+                        <a style="font-size:xxx-large;">🗓️</a><a style="font-weight: bold; line-height: 2.3;"><br>계획형</a>
+                    </div>
+                    <div class="info-card"> 
+                        <a style="font-size:xxx-large;">👤</a><a style="font-weight: bold; line-height: 2.3;"><br>자습형</a>
+                    </div>
+                    <div class="info-card"> 
+                        <a style="font-size:xxx-large;">➕</a><a style="font-weight: bold; line-height: 2.3;"><br>추후 추가예정</a>
+                    </div>
+                </div>
+
+                <p style="text-align: left; font-weight: bold;">과목별 AI문제보기</p>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <a>1</a>
+                    </div>
+                    <div class="info-card">
+                        <a>2</a>
+                    </div>
+                    <div class="info-card">
+                        <a>3</a>
+                    </div>
+                    <div class="info-card">
+                        <a>4</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-nav">
+                <div class="nav-item" onclick="window.location.href='index.html'" >🏠</div>
+                <div class="nav-item" onclick="window.location.href='Q.html'">🔍</div>
+                <div class="nav-item" onclick="window.location.href='event.html'">⚡</div>
+                <div class="nav-item" onclick="window.location.href='mypage.html'">👤</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const intro = document.getElementById('intro');
+            intro.style.opacity = '0';
+            setTimeout(() => {
+                intro.style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }, 500);
+        }, 1100);
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.info-cards');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // 터치 이벤트 지원
+            slider.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('touchend', () => {
+                isDown = false;
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
+</body>
+</html>

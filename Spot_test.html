@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot - 홈</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Jua&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Jua', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-family: 'Comfortaa', cursive;
+            font-weight: 700;
+            font-size: 24px;
+            color: #FFC14A;
+        }
+        .profile {
+            width: 30px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+        .welcome {
+            background: linear-gradient(to right, #FFA500, #FF6347);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .icon-item {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .icon-item img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .footer img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Spot</div>
+            <div class="profile"></div>
+        </div>
+        
+        <div class="welcome">
+            <center>
+            <h2>Welcome</h2>
+            <p>to the New way to study</p>
+            </center>
+        </div>
+        
+        <div class="icon-grid">
+            <div class="icon-item">
+                <img src="path_to_lightbulb_icon.png" alt="공부방 개설하기">
+                <p>공부방 개설하기</p>
+            </div>
+            <div class="icon-item">
+                <img src="path_to_lightning_icon.png" alt="빠른입장 하기">
+                <p>빠른입장 하기</p>
+            </div>
+            <div class="icon-item">
+                <img src="path_to_ruler_icon.png" alt="자">
+                <p>자</p>
+            </div>
+            <div class="icon-item">
+                <img src="path_to_pencil_icon.png" alt="수정">
+                <p>수정</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <img src="path_to_home_icon.png" alt="홈">
+        <img src="path_to_search_icon.png" alt="검색">
+        <img src="path_to_edit_icon.png" alt="편집">
+        <img src="path_to_user_icon.png" alt="프로필">
+    </div>
+</body>
+</html>

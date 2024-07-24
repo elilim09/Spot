@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Jua&display=swap" rel="stylesheet">
+    <title>Spot</title>
+    <style>
+        @font-face {
+            font-family: 'SamsungSharpSans';
+            src: url('fonts/samsungsharpsans.otf') format('opentype');
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: 'SamsungSharpSans';
+            src: url('fonts/samsungsharpsans-medium.otf') format('opentype');
+            font-weight: medium;
+        }
+        @font-face {
+            font-family: 'SamsungSharpSans';
+            src: url('fonts/samsungsharpsans-bold.otf') format('opentype');
+            font-weight: bold;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            font-family: 'Jua', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            box-sizing: border-box;
+        }
+        #spot-text {
+            overflow: hidden;
+            border-right: .15em solid #f6cc7a;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 0.5s steps(4, end),
+                blink-caret .75s step-end infinite;
+        }
+        #main-content {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .content {
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-family: 'Comfortaa', cursive;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        .Q {
+            color: #ccc;
+        }
+        .card {
+            background-color: #E6F3FF;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .gift-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .card-text {
+            font-size: 14px;
+        }
+        .calm-card {
+            background: linear-gradient(to right, #FFA500, #FF6347);
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-family: SamsungSharpSans;
+        }
+        .info-cards {
+            display: flex;
+            overflow-x: hidden; /* 스크롤 제거 */
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        }
+        .info-cards::-webkit-scrollbar { /* WebKit */
+            width: 0;
+            height: 0;
+        }
+        .info-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-right: 10px;
+            font-size: 14px;
+            width: 100%;
+            display: inline-block;
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            
+        }
+        .coming-soon {
+            text-align: center;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #FFD700;
+            padding: 10px;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+        .nav-item {
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-content">
+        <div class="container">
+            <div class="content">
+                <div class="header">
+                    <div class="logo">Spot</div>
+                    <div class="Q">Q.</div>
+                </div>
+                <br>
+
+                <p style="text-align: left; font-weight: bold;">최근 내가 푼 문제</p>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <a style="font-weight: bold; text-decoration: none; color: black;" href="Q/과학/[과학] 역학적 에너지의 보존.docx">[과학] 역학적 에너지의 보존</a>
+                        <br><br>
+                        <a style="font-weight: medium; text-decoration: none; color: black;">더 이상 푼 문제가 없어요.</a>
+                    </div>
+                </div>
+
+                <p style="text-align: left; font-weight: bold;">과목별 AI문제보기</p>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <a>1</a>
+                    </div>
+                    <div class="info-card">
+                        <a>2</a>
+                    </div>
+                    <div class="info-card">
+                        <a>3</a>
+                    </div>
+                    <div class="info-card">
+                        <a>4</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-nav">
+                <div class="nav-item" onclick="window.location.href='index.html'" >🏠</div>
+                <div class="nav-item" onclick="window.location.href='Q.html'">🔍</div>
+                <div class="nav-item" onclick="window.location.href='event.html'">⚡</div>
+                <div class="nav-item" onclick="window.location.href='mypage.html'">👤</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
